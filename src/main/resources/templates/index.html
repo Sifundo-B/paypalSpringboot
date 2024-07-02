@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Paypal Payment Integration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="container">
+    <h1 class="text-center mt-5">Paypal Payment Integration</h1>
+    <form action="/payment/create" method="post">
+        <div class="form-group">
+            <label for="method">Payment Method:</label>
+            <input type="text" id="method" name="method" value="paypal" readonly class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" step="0.01" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="currency">Currency:</label>
+            <select id="currency" name="currency" class="form-control" required>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="ZAR">ZAR</option>
+                <!-- Add more currencies as needed -->
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Payment</button>
+    </form>
+</div>
+</body>
+</html>
